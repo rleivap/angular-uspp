@@ -1,47 +1,49 @@
-<section class="row">
-    <div class="col border border-2 border-primary shadow m-2">
-        <p class="lead fs-2 text-primary"> Concurso de tiktoks por Aniversario del SIS</p>
-        <div [ngSwitch]="tik">
-            <div *ngFor="let tik of tiktoks">
-                <div *ngSwitchCase="tik.id">
-                    <div class="card shadow m-2 p-2 card text-center">
-                        <div class="card-header bg-primary text-white">
-                            {{tik.nombre}}<br />
+<div class="contanier">
+    <section class="row">
+        <div class=" col border border-2 border-primary shadow m-2">
+            <p class="lead fs-2 text-primary"> Concurso de tiktoks por Aniversario del SIS</p>
+            <div [ngSwitch]="tik">
+                <div *ngFor="let tik of tiktoks">
+                    <div *ngSwitchCase="tik.id">
+                        <div class="card shadow m-2 p-2 card text-center">
+                            <div class="card-header bg-primary text-white">
+                                {{tik.nombre}}<br />
+                            </div>
+                            <div flex=”30” class="card-body col col-xs-4 col-sm-6 col-md-12">
+                                <youtube-player videoId={{tik.video}} suggestedQuality="highres" [height]="250" [width]="300"
+                                [startSeconds]="1" [endSeconds]="120">
+                            </youtube-player>
+                            </div>
+                            <div class="card-footer">
+                                Integrantes: {{tik.participantes}}<br />
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <youtube-player videoId={{tik.video}} suggestedQuality="highres" [height]="480" [width]="650"
-                            [startSeconds]="1" [endSeconds]="120">
-                        </youtube-player>
-                        </div>
-                        <div class="card-footer">
-                            Integrantes: {{tik.participantes}}<br />
-                        </div>
+    
                     </div>
-
                 </div>
-            </div>
-            <div *ngSwitchDefault>
-                <p class="lead fs-2 text danger">Organizado por el equipo de Red Salud de Lambayeque y la Uspp</p>
+                <div *ngSwitchDefault>
+                    <p class="lead fs-2 text danger">Organizado por el equipo de Red Salud de Lambayeque y la Uspp</p>
+                </div>
             </div>
         </div>
-    </div>
-
-</section>
-
-<div class="col border border-primary shadow border-3 mt-2">
-    <div class="row">
-        <div class="col col-4" *ngFor="let tik of tiktoks">
-            <div class="card shadow m-2 p-2 card text-center">
-                <div class="card-header bg-primary text-white">
-                    {{tik.nombre}}<br />
-                </div>
-                <div class="card-body">
-                    <youtube-player videoId={{tik.video}} suggestedQuality="highres" [height]="300" [width]="300"
-                        [startSeconds]="1" [endSeconds]="120">
-                    </youtube-player>
-                </div>
-                <div class="card-footer">
-                    Participantes: {{tik.participantes}}<br />
+    
+    </section>
+    
+    <div class="col border border-primary shadow border-3 mt-2">
+        <div class="row">
+            <div flex=”30” class="col col-md-4" *ngFor="let tik of tiktoks">
+                <div class="card shadow m-2 p-2 card text-center">
+                    <div class="card-header bg-primary text-white">
+                        {{tik.nombre}}<br />
+                    </div>
+                    <div class="card-body">
+                        <youtube-player videoId={{tik.video}} suggestedQuality="highres" [height]="250" [width]="300"
+                            [startSeconds]="1" [endSeconds]="120">
+                        </youtube-player>
+                    </div>
+                    <div class="card-footer">
+                        Participantes: {{tik.participantes}}<br />
+                    </div>
                 </div>
             </div>
         </div>
