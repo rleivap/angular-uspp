@@ -8,6 +8,8 @@ import { TiktokComponent } from './comp/tiktok/tiktok.component';
 import { HomeComponent } from './comp/home/home.component';
 import { PageNotFoundComponent } from './comp/page-not-found/page-not-found.component';
 import { YouTubePlayerModule } from "@angular/youtube-player";
+import { CarrucelComponent } from './comp/carrucel/carrucel.component';
+import { AutorComponent } from './comp/autor/autor.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
     NavegadorComponent,
     TiktokComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CarrucelComponent,
+    AutorComponent
   ],
   imports: [
     BrowserModule,
