@@ -10,6 +10,8 @@ import { PageNotFoundComponent } from './comp/page-not-found/page-not-found.comp
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { CarrucelComponent } from './comp/carrucel/carrucel.component';
 import { AutorComponent } from './comp/autor/autor.component';
+import { TableroSisComponent } from './comp/tablero-sis/tablero-sis.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { AutorComponent } from './comp/autor/autor.component';
     HomeComponent,
     PageNotFoundComponent,
     CarrucelComponent,
-    AutorComponent
+    AutorComponent,
+    TableroSisComponent
   ],
   imports: [
     BrowserModule,
