@@ -10,7 +10,7 @@ import { PageNotFoundComponent } from './comp/page-not-found/page-not-found.comp
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { CarrucelComponent } from './comp/carrucel/carrucel.component';
 import { AutorComponent } from './comp/autor/autor.component';
-import { TableroSisComponent } from './comp/tablero-sis/tablero-sis.component';
+import { RedirectGuardService } from './servicios/redirect-guard.service';
 
 
 @NgModule({
@@ -21,15 +21,14 @@ import { TableroSisComponent } from './comp/tablero-sis/tablero-sis.component';
     HomeComponent,
     PageNotFoundComponent,
     CarrucelComponent,
-    AutorComponent,
-    TableroSisComponent
+    AutorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     YouTubePlayerModule
   ],
-  providers: [],
+  providers: [RedirectGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
