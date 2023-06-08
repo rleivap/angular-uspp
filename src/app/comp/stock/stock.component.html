@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="col" style="text-align: center;">
+        <h1>Informar en el siguiente formulario el stock pendiente de fuas de su establecimiento:</h1>
+    </div>
+    <br />
+
+    <form class="form-group row">
+        <div class="form-group col-md-3">
+            <label for="punto">Punto de Digitación:</label>
+            <input type="text" name="punto" id="punto" placeholder="nombre del punto" class="form-control"
+                [(ngModel)]="cuadroPunto" required ng-minlength="3" ng-maxlength="25" >
+        </div>
+
+        <div class="form-group col-md-3">
+            <label for="fecha">Fecha de reporte:</label>
+            <input type="date" name="fecha" id="fecha" class="form-control" [(ngModel)]="cuadroFecha">
+        </div>
+
+        <div class="form-group col-md-3">
+            <label for="nombre">Nombre responsable:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="nombre" class="form-control"
+                [(ngModel)]="cuadroNombre">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="apellidopat">Apellido Paterno:</label>
+            <input type="text" name="appelidopat" id="apellidopat" placeholder="apellido paterno" class="form-control"
+                [(ngModel)]="cuadroApellidopat">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="apellidomat">Apellido Materno:</label>
+            <input type="text" name="apellidomat" id="apellidomat" placeholder="apellido materno" class="form-control"
+                [(ngModel)]="cuadroApellidomat">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="stock">Numero de fuas pendientes:</label>
+            <input type="text" name="stock" id="stock" placeholder="numero de fuas" class="form-control"
+                [(ngModel)]="cuadroFuas">
+        </div>
+
+        <div class="col">
+            <button type="submit" class="btn btn-primary m-4" (click)="agregarStock()">Enviar</button>
+        </div>
+
+    </form>
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <p class="lead fs-2 text-dark">Fuas pendientes a la fecha:</p>
+        <div class="col col-6 mt-2" *ngFor="let stock of stocks">
+            <div class="card border border-2 shadow">
+                <div class="card-header bg-primary text-white">
+                    Nombre del pp.dd: {{stock.punto}}
+                    <br/>
+                    Fecha: {{stock.fecha}}
+                </div>
+                <div class="card-body">
+                    Nombres y Apellidos: {{stock.nombre}} {{stock.apellidopat}} {{stock.apellidomat}}
+                    <br/>
+                    Fuas pendientes: {{stock.stock}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

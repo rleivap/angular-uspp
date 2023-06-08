@@ -14,6 +14,11 @@ import { RedirectGuardService } from './servicios/redirect-guard.service';
 import { EnlacesInternosComponent } from './comp/enlaces-internos/enlaces-internos.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './comp/login/login.component';
+import { DataService } from './servicios/data.service';
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from '@angular/forms';
+import { StockComponent } from './comp/stock/stock.component';
 
 //Angular Material
 
@@ -28,7 +33,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PageNotFoundComponent,
     CarrucelComponent,
     AutorComponent,
-    EnlacesInternosComponent
+    EnlacesInternosComponent,
+    LoginComponent,
+    StockComponent
   ],
   imports: [
     BrowserModule,
@@ -36,8 +43,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     YouTubePlayerModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [RedirectGuardService],
+  providers: [RedirectGuardService,DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
