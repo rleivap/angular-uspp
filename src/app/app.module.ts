@@ -19,9 +19,8 @@ import { DataService } from './servicios/data.service';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 import { StockComponent } from './comp/stock/stock.component';
-
-//Angular Material
-
+import { ListaStockComponent } from './comp/lista-stock/lista-stock.component';
+import { ServicioStockService } from './servicios/servicio-stock.service';
 
 
 @NgModule({
@@ -35,7 +34,8 @@ import { StockComponent } from './comp/stock/stock.component';
     AutorComponent,
     EnlacesInternosComponent,
     LoginComponent,
-    StockComponent
+    StockComponent,
+    ListaStockComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +46,7 @@ import { StockComponent } from './comp/stock/stock.component';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [RedirectGuardService,DataService],
+  providers: [RedirectGuardService,DataService,ServicioStockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
