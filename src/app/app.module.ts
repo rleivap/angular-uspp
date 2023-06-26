@@ -15,12 +15,13 @@ import { EnlacesInternosComponent } from './comp/enlaces-internos/enlaces-intern
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './comp/login/login.component';
-import { DataService } from './servicios/data.service';
+import { DataServices} from './servicios/data.services';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 import { StockComponent } from './comp/stock/stock.component';
 import { ListaStockComponent } from './comp/lista-stock/lista-stock.component';
 import { ServicioStockService } from './servicios/servicio-stock.service';
+import { StocksService } from './servicios/stocks.service';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { ServicioStockService } from './servicios/servicio-stock.service';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [RedirectGuardService,DataService,ServicioStockService],
+  providers: [RedirectGuardService,DataServices,ServicioStockService,StocksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
