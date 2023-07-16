@@ -35,6 +35,4 @@ export class StockComponent implements OnInit{
   cuadroApellidomat:string="";
   cuadroFecha:Date=new Date(Date.now());
   cuadroFuas:number=0;
-
-  
 }

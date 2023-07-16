@@ -1,6 +1,6 @@
 <div class="container">
     <div class="col" style="text-align: center;">
-        <h1>Informar el stock de fuas pendientes por digitar:</h1>
+        <h3>Registro de fuas pendientes por digitar:</h3>
     </div>
     <br />
 
@@ -8,7 +8,7 @@
         <div class="form-group col-md-3">
             <label for="punto">Punto de Digitación:</label>
             <input type="text" name="punto" id="punto" placeholder="nombre del punto" class="form-control"
-                [(ngModel)]="cuadroPunto" required ng-minlength="3" ng-maxlength="80" >
+                [(ngModel)]="cuadroPunto" required ng-minlength="3" ng-maxlength="80">
         </div>
 
         <div class="form-group col-md-3">
@@ -33,7 +33,7 @@
         </div>
         <div class="form-group col-md-3">
             <label for="stock">Numero de fuas pendientes:</label>
-            <input type="text" name="stock" id="stock" placeholder="numero de fuas" class="form-control"
+            <input type="number" name="stock" id="stock" placeholder="numero de fuas" class="form-control"
                 [(ngModel)]="cuadroFuas">
         </div>
 
@@ -45,10 +45,37 @@
 </div>
 <br />
 
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <p class="lead fs-2 text-dark">Fuas pendientes a la fecha:</p>
         <app-lista-stock class="col col-6 mt-2" *ngFor="let stock of stocks" [stockLista]="stock"></app-lista-stock>
     </div>
-</div>
+</div> -->
 
+<div class="container text-center">
+    <div class="col">
+        <table class="table table-sm table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Punto de Digitación</th>
+                    <th>Fecha Reporte</th>
+                    <th>Nombres</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>N° Fuas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stock of stocks">
+                    <!-- <app-lista-stock *ngFor="let stock of stocks" [stockLista]="stock"></app-lista-stock> -->
+                    <td>{{stock.punto}}</td>
+                    <td>{{stock.fecha}}</td>
+                    <td>{{stock.nombre}}</td>
+                    <td>{{stock.apellidopat}}</td>
+                    <td>{{stock.apellidomat}}</td>
+                    <td>{{stock.stock}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
