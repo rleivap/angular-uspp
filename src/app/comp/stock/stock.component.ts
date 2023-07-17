@@ -23,28 +23,8 @@ export class StockComponent implements OnInit{
   }
 
   stocks:Stock[]=[];
-/*   listapuntos:listado[]=[
-                        {id:1,"C.S San Mrtin"},
-                        {id:2,"C.S Toribia Castro"},
-                        {id:3,"C.S Motupe"},
-                        {id:4,"C.S Olmos"},
-                        {id:5,"C.S Salas"},
-                        {id:6,"C.S Illimo"},
-                        {id:7,"C.S Mochumi"},
-                        {id:8,"C.S Pacora"},
-                        {id:9,"C.S Kañaris"},
-                        {id:"10","C.S Morrope"},
-                        {id:"11","C.S Cruz del Medano"},
-                        {id:"12","C.S Tucume"},
-                        {id:"13","C.S Jayanca"},
-                        {id:"14","P.S Romwero"},
-                        {id:"15","P.S La Colorada"},
-                        {id:"16","P.S La Ramada"},
-                        {id:"17","C.S.M.C Tumi de Oro"},
-                        {id:"18","Red Lambayeque"}
-  ]; */
 
-  agregarStock(){
+  agregarStock(): void{
     let mistock=new Stock(this.cuadroPunto,this.cuadroNombre,this.cuadroApellidopat,this.cuadroApellidomat,this.cuadroFecha,this.cuadroFuas);
     this.miServicio.muestraMensaje(mistock.nombre + " tu registro se agrego con éxito");
     this.stocksservice.agregarStockServicio(mistock);
