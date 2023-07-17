@@ -1,0 +1,36 @@
+.container{
+    padding: 40px 0;
+}
+
+.footer-info.rlp{
+    padding-left: 25px;
+}
+
+.rlp> address{
+        line-height: 22px;
+        margin-bottom: 40px;
+}
+
+.rlp > h2 {
+    margin-top: 30px;
+    margin-bottom: 26px;
+    color: #475A4D;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+a, .uk-link{
+        color: #0077dd;
+        text-decoration: none;
+        cursor: pointer;
+}
+
+.bi.bi-telephone, .bi.bi-geo-alt, .bi.bi.bi-envelope{
+    color:blue;
+}
+
+.copy-text {
+    padding-top: 30px;
+    padding-bottom: 14px;
+    font-size: 16px;
+}
