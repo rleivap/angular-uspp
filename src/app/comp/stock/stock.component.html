@@ -5,10 +5,34 @@
     <br />
 
     <form class="form-group row">
-        <div class="form-group col-md-3">
+        <!-- <div class="form-group col-md-3">
             <label for="punto">Punto de Digitación:</label>
             <input type="text" name="punto" id="punto" placeholder="nombre del punto" class="form-control"
                 [(ngModel)]="cuadroPunto" required ng-minlength="3" ng-maxlength="80">
+        </div> -->
+        <div class="form-group col col-md-3">
+            <label for="punto">Punto de Digitación:</label>
+            <select id="punto" name="punto" 
+                        [(ngModel)]="cuadroPunto" class="form-control"> 
+                        <option value="1">C.S San Martin</option>
+                        <option value="2">C.S Toribia Castro</option>
+                        <option value="3">C.S Motupe</option>
+                        <option value="4">C.S Olmos</option>
+                        <option value="5">C.S Salas</option>
+                        <option value="6">C.S Illimo</option>
+                        <option value="7">C.S Mochumi</option>
+                        <option value="8">C.S Pacora</option>
+                        <option value="9">C.S Kañaris</option>
+                        <option value="10">C.S Morrope</option>
+                        <option value="11">C.S Cruz del Medano</option>
+                        <option value="12">C.S Tucume</option>
+                        <option value="13">C.S Jayanca</option>
+                        <option value="14">P.S Romwero</option>
+                        <option value="15">P.S La Colorada</option>
+                        <option value="16">P.S La Ramada</option>
+                        <option value="17">C.S.M.C Tumi de Oro</option>
+                        <option value="18">Red Lambayeque</option>
+            </select>
         </div>
 
         <div class="form-group col-md-3">

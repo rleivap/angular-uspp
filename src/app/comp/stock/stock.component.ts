@@ -29,7 +29,7 @@ export class StockComponent implements OnInit{
     this.stocksservice.agregarStockServicio(mistock);
   }
   
-  cuadroPunto:string="";
+  cuadroPunto:string="1";
   cuadroNombre:string="";
   cuadroApellidopat:string="";
   cuadroApellidomat:string="";
