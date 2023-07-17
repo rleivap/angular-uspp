@@ -25,7 +25,7 @@ export class StockComponent implements OnInit{
   stocks:Stock[]=[];
 
   agregarStock(): void{
-    let mistock=new Stock(this.cuadroPunto,this.cuadroNombre,this.cuadroApellidopat,this.cuadroApellidomat,this.cuadroFecha,this.cuadroFuas);
+    let mistock=new Stock(this.cuadroPunto,this.cuadroNombre,this.cuadroApellidopat,this.cuadroApellidomat,this.cuadroFecha,this.cuadroFuas, this.cuadroHis);
     this.miServicio.muestraMensaje(mistock.nombre + " tu registro se agrego con éxito");
     this.stocksservice.agregarStockServicio(mistock);
   }
@@ -36,4 +36,5 @@ export class StockComponent implements OnInit{
   cuadroApellidomat:string="";
   cuadroFecha:Date=new Date(Date.now());
   cuadroFuas:number=0;
+  cuadroHis:number=0;
 }

@@ -41,9 +41,15 @@
                 [(ngModel)]="cuadroApellidomat">
         </div>
         <div class="form-group col-md-3">
-            <label for="stock">Numero de fuas pendientes:</label>
+            <label for="stock">N° de Fuas pendientes:</label>
             <input type="number" name="stock" id="stock" placeholder="numero de fuas" class="form-control"
                 [(ngModel)]="cuadroFuas">
+        </div>
+
+        <div class="form-group col-md-3">
+            <label for="stock">N° de His pendientes:</label>
+            <input type="number" name="stockH" id="stockH" placeholder="numero de fuas" class="form-control"
+                [(ngModel)]="cuadroHis">
         </div>
 
         <div class="col">
@@ -71,7 +77,8 @@
                     <th>Nombres</th>
                     <th>Apellido Paterno</th>
                     <th>Apellido Materno</th>
-                    <th>N° Fuas</th>
+                    <th>N° Hojas Fuas</th>
+                    <th>N° Hojas His</th>
                 </tr>
             </thead>
             <tbody>
@@ -83,6 +90,7 @@
                     <td>{{stock.apellidopat}}</td>
                     <td>{{stock.apellidomat}}</td>
                     <td>{{stock.stock}}</td>
+                    <td>{{stock.stockH}}</td>
                 </tr>
             </tbody>
         </table>
