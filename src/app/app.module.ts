@@ -23,6 +23,7 @@ import { ListaStockComponent } from './comp/lista-stock/lista-stock.component';
 import { ServicioStockService } from './servicios/servicio-stock.service';
 import { StocksService } from './servicios/stocks.service';
 import { FooterComponent } from './comp/footer/footer.component';
+import { CrearStockComponent } from './comp/crear-stock/crear-stock.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { FooterComponent } from './comp/footer/footer.component';
     LoginComponent,
     StockComponent,
     ListaStockComponent,
-    FooterComponent
+    FooterComponent,
+    CrearStockComponent
   ],
   imports: [
     BrowserModule,
