@@ -1,7 +1,7 @@
 export class Stock {
     
     constructor(punto:string, nombre:string, apellidopat:string, apellidomat:string,
-        fecha:Date, stock:number, stockH:number, observacion:string){
+        fecha:Date, stock:number, stockH:number, observacion:number){
             this.punto=punto;
             this.nombre=nombre;
             this.apellidopat=apellidopat;
@@ -18,5 +18,5 @@ export class Stock {
     fecha:Date=new Date(Date.now());
     stock:number=0;
     stockH:number=0;
-    observacion:string=""
+    observacion:number=0;
 }

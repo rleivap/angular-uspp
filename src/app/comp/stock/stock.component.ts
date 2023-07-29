@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 /* import { listado } from 'src/app/modelo/listado'; */
 import { Stock } from 'src/app/modelo/stock';
@@ -9,33 +10,34 @@ import { StocksService } from 'src/app/servicios/stocks.service';
   templateUrl: './stock.component.html',
   styleUrls: ['./stock.component.css']
 })
-export class StockComponent implements OnInit{
+export class StockComponent implements OnInit {
 
-  constructor(private miServicio: ServicioStockService,private stocksservice:StocksService){
-    this.stocks=this.stocksservice.stocks
+  constructor(private miServicio: ServicioStockService, private stocksservice: StocksService) {
+    this.stocks = this.stocksservice.stocks
   }
+  
   ngOnInit(): void {
-    this.stocksservice.obtenerStock().subscribe(misStocks=>{
+    this.stocksservice.obtenerStock().subscribe(misStocks => {
       console.log(misStocks);
-      this.stocks=Object.values(misStocks);
+      this.stocks = Object.values(misStocks);
       this.stocksservice.setStocks(this.stocks);
     });
   }
 
-  stocks:Stock[]=[];
+  stocks: Stock[] = [];
 
-  agregarStock(): void{
-    let mistock=new Stock(this.cuadroPunto,this.cuadroNombre,this.cuadroApellidopat,this.cuadroApellidomat,this.cuadroFecha,this.cuadroFuas, this.cuadroHis, this.cuadroObservacion);
+  agregarStock(): void {
+    let mistock = new Stock(this.cuadroPunto, this.cuadroNombre, this.cuadroApellidopat, this.cuadroApellidomat, this.cuadroFecha, this.cuadroFuas, this.cuadroHis, this.cuadroObservacion);
     this.miServicio.muestraMensaje(mistock.nombre + " tu registro se agrego con éxito");
     this.stocksservice.agregarStockServicio(mistock);
   }
-  
-  cuadroPunto:string="";
-  cuadroNombre:string="";
-  cuadroApellidopat:string="";
-  cuadroApellidomat:string="";
-  cuadroFecha:Date=new Date(Date.now());
-  cuadroFuas:number=0;
-  cuadroHis:number=0;
-  cuadroObservacion:string="";
+
+  cuadroPunto: string = "";
+  cuadroNombre: string = "";
+  cuadroApellidopat: string = "";
+  cuadroApellidomat: string = "";
+  cuadroFecha: Date = new Date();
+  cuadroFuas: number = 0;
+  cuadroHis: number = 0;
+  cuadroObservacion: number = 0;
 }
