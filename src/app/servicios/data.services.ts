@@ -16,7 +16,7 @@ export class DataServices {
   guardarStock(stocks:Stock[]){
     this.httpClient.put('https://angular-uspp-default-rtdb.firebaseio.com/datos.json',stocks).subscribe(
       response=>console.log("Se han guardado los registros correctamente"+ response),
-      error=>console.log("Se han guardado los registros correctamente" + error)
+      error=>console.log("No se han guardado los registros correctamente" + error)
     )
   }
 

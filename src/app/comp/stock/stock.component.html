@@ -6,20 +6,20 @@
     <br />
 
     <form class="form-group row">
-        <div class="form-group col-md-3">
+        <!-- <div class="form-group col-md-3">
             <label for="punto">Punto de Digitación:</label>
             <input type="text" name="punto" id="punto" placeholder="nombre del punto" class="form-control"
                 [(ngModel)]="cuadroPunto" required ng-minlength="3" ng-maxlength="80">
-        </div>
-        <!-- <div class="form-group col col-md-3">
+        </div> -->
+        <div class="form-group col col-md-3">
             <label for="punto">Punto de Digitación:</label>
             <select id="punto" name="punto" 
                         [(ngModel)]="cuadroPunto" class="form-control"> 
-                        <option *ngFor="let lis of listapuntos" value[]="lis.id">
-                            {{.}}
+                        <option *ngFor="let lis of lista" [value]="lis.nombre">
+                            {{lis.nombre}}
                         </option>
             </select>
-        </div> -->
+        </div>
 
         <div class="form-group col-md-3">
             <label for="fecha">Fecha de reporte:</label>
