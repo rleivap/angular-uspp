@@ -1,6 +1,6 @@
 <div class="container">
     <div class="container mt-5">
-        <span class="fs-3">Listado de Puntos de Digitación:</span>
+        <span class="fs-3" [ngStyle]="{'font-weight':'bold'}">Reporte de Puntos de Digitación:</span>
         <!-- <button class="btn btn-dark btn-lg float-end">Agregar</button> -->
     </div>
     <br />
@@ -13,11 +13,10 @@
         </div> -->
         <div class="form-group col col-md-3">
             <label for="punto">Punto de Digitación:</label>
-            <select id="punto" name="punto" 
-                        [(ngModel)]="cuadroPunto" class="form-control"> 
-                        <option *ngFor="let lis of lista" [value]="lis.nombre">
-                            {{lis.nombre}}
-                        </option>
+            <select id="punto" name="punto" [(ngModel)]="cuadroPunto" class="form-control">
+                <option *ngFor="let lis of lista" [value]="lis.nombre">
+                    {{lis.nombre}}
+                </option>
             </select>
         </div>
 
@@ -79,9 +78,9 @@
         <table class="table table-sm table-striped table-hover">
             <thead class="table-dark">
                 <tr>
-                    <th>Punto de Digitación</th>
-                    <th>Fecha Reporte</th>
-       <!--              <th>Nombres</th>
+                    <th [ngStyle]="{'width':'250px'}">Punto de Digitación</th>
+                    <th [ngStyle]="{'width':'250px'}">Fecha Reporte</th>
+                    <!--    <th>Nombres</th>
                     <th>Apellido Paterno</th>
                     <th>Apellido Materno</th> -->
                     <th>N° Hojas Fuas</th>
@@ -90,18 +89,31 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let stock of stocks">
+                <tr *ngFor="let stock of stocks|filtro:page">
                     <!-- <app-lista-stock *ngFor="let stock of stocks" [stockLista]="stock"></app-lista-stock> -->
                     <td>{{stock.punto}}</td>
                     <td>{{stock.fecha|date:'dd/MM/yyyy'}}</td>
-<!--                     <td>{{stock.nombre}}</td>
+                    <!--                     <td>{{stock.nombre}}</td>
                     <td>{{stock.apellidopat}}</td>
                     <td>{{stock.apellidomat}}</td> -->
-                    <td>{{stock.stock}}</td>
+                    <td [ngStyle]="{'background-color':stock.stock>1000?'#FE3C3C':'#39FF33'}">{{stock.stock}}</td>
                     <td>{{stock.stockH}}</td>
                     <td>{{stock.observacion}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
+</div>
+
+<div class="container text-center">
+    <button class="btn btn-primary m-4" 
+            (click)="prevPage()">
+        Anterior
+    </button>
+    &nbsp;
+    <button class="btn btn-primary m-4" 
+            (click)="nextPage()"
+            [disabled]="(stocks|filtro:page).length==0">
+        Siguiente
+    </button>
 </div>

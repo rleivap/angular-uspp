@@ -12,7 +12,8 @@ import { StocksService } from 'src/app/servicios/stocks.service';
 })
 export class StockComponent implements OnInit {
 
-
+  public page:number=0;
+  
   stockForm = new FormGroup({
     nombre: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)])
   })
@@ -55,6 +56,15 @@ export class StockComponent implements OnInit {
     let mistock = new Stock(this.cuadroPunto, this.cuadroNombre, this.cuadroApellidopat, this.cuadroApellidomat, this.cuadroFecha, this.cuadroFuas, this.cuadroHis, this.cuadroObservacion);
     this.miServicio.muestraMensaje(mistock.nombre + " tu registro se agrego con éxito");
     this.stocksservice.agregarStockServicio(mistock);
+  }
+
+  nextPage(){
+    this.page+=5;
+  }
+
+  prevPage(){
+    if(this.page>0)
+    this.page-=5;
   }
 
   cuadroPunto: string = "";

@@ -24,6 +24,7 @@ import { ServicioStockService } from './servicios/servicio-stock.service';
 import { StocksService } from './servicios/stocks.service';
 import { FooterComponent } from './comp/footer/footer.component';
 import { CrearStockComponent } from './comp/crear-stock/crear-stock.component';
+import { FiltroPipe } from './pipe/filtro.pipe';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { CrearStockComponent } from './comp/crear-stock/crear-stock.component';
     StockComponent,
     ListaStockComponent,
     FooterComponent,
-    CrearStockComponent
+    CrearStockComponent,
+    FiltroPipe
   ],
   imports: [
     BrowserModule,
