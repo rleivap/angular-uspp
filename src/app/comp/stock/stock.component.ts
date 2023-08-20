@@ -4,6 +4,7 @@ import { Lista } from 'src/app/modelo/lista';
 import { Stock } from 'src/app/modelo/stock';
 import { ServicioStockService } from 'src/app/servicios/servicio-stock.service';
 import { StocksService } from 'src/app/servicios/stocks.service';
+import { ExcelService } from 'src/app/servicios/excel.service';
 
 @Component({
   selector: 'app-stock',
@@ -18,7 +19,7 @@ export class StockComponent implements OnInit {
     nombre: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)])
   })
 
-  constructor(private miServicio: ServicioStockService, private stocksservice: StocksService) {
+  constructor(private miServicio: ServicioStockService, private stocksservice: StocksService,private excelService: ExcelService) {
     this.stocks = this.stocksservice.stocks
   }
 
@@ -31,7 +32,8 @@ export class StockComponent implements OnInit {
   }
 
   stocks: Stock[] = [];
-  lista: Lista[] = [
+  lista: Lista[] = 
+  [
     { "cod": 1, "nombre": "C.S TORIBIA CASTRO" },
     { "cod": 2, "nombre": "C.S SAN MARTIN" },
     { "cod": 3, "nombre": "C.S MORROPE" },
@@ -67,6 +69,9 @@ export class StockComponent implements OnInit {
     this.page-=5;
   }
 
+  exportData() {
+    this.excelService.exportToExcel(this.stocks, 'datos', 'Hoja1');
+  }
   cuadroPunto: string = "";
   cuadroNombre: string = "";
   cuadroApellidopat: string = "";
@@ -75,4 +80,5 @@ export class StockComponent implements OnInit {
   cuadroFuas: number = 0;
   cuadroHis: number = 0;
   cuadroObservacion: number = 0;
+
 }
