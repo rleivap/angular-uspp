@@ -14,6 +14,14 @@ const routes: Routes = [
     externalUrl: 'https://app.powerbi.com/view?r=eyJrIjoiZjA3NDNjODUtNmY4Ni00OWIyLTlmMTYtNjllNTdkNGFhYTk0IiwidCI6IjQwNzBmZTg5LTVhMGMtNGMyYy04MDFkLWI0NjhhODI4ZmQ2MCJ9'
     }
   },
+  {path:'redirect-tablerohis', canActivate: [RedirectGuardService],component:RedirectGuardService,data: {
+    externalUrl: 'https://app.powerbi.com/view?r=eyJrIjoiZDc2NjhkYTgtM2E5Yi00YjU2LTg3NmItMjRmYzQ1NTdlOTkzIiwidCI6IjQwNzBmZTg5LTVhMGMtNGMyYy04MDFkLWI0NjhhODI4ZmQ2MCJ9'
+    }
+  },
+  {path:'redirect-llenadoFuas', canActivate: [RedirectGuardService],component:RedirectGuardService,data: {
+    externalUrl: 'https://bit.ly/llenadoFuasRl'
+    }
+  },
   {path:'login',component:LoginComponent},
   {path: 'stock',component:StockComponent},
   {path:'',redirectTo:'inicio',pathMatch:'full'},

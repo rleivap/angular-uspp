@@ -26,6 +26,7 @@ import { FooterComponent } from './comp/footer/footer.component';
 import { CrearStockComponent } from './comp/crear-stock/crear-stock.component';
 import { FiltroPipe } from './pipe/filtro.pipe';
 import { ExcelService } from './servicios/excel.service';
+import { PdfService } from './servicios/pdf.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { ExcelService } from './servicios/excel.service';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [RedirectGuardService,DataServices,ServicioStockService,StocksService,ExcelService],
+  providers: [RedirectGuardService,DataServices,ServicioStockService,StocksService,ExcelService,PdfService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

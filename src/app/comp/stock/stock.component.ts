@@ -70,7 +70,7 @@ export class StockComponent implements OnInit {
   }
 
   exportData() {
-    this.excelService.exportToExcel(this.stocks, 'datos', 'Hoja1');
+    this.excelService.exportToExcel(this.stocks, 'Detalle_Stock_Pend', 'Hoja1');
   }
   cuadroPunto: string = "";
   cuadroNombre: string = "";
