@@ -22,6 +22,15 @@ const routes: Routes = [
     externalUrl: 'https://bit.ly/llenadoFuasRl'
     }
   },
+  {path:'redirect-afiliaciones1', canActivate: [RedirectGuardService],component:RedirectGuardService,data: {
+    externalUrl: 'https://docs.google.com/spreadsheets/d/1D6pL1-6-J3rdVRIpdQZEy6TVdtUvwjDR/edit?usp=sharing&ouid=111888806341130526792&rtpof=true&sd=true'
+    }
+  },
+  {path:'redirect-afiliaciones2', canActivate: [RedirectGuardService],component:RedirectGuardService,data: {
+    externalUrl: 'https://docs.google.com/spreadsheets/d/1Uhgt_f07gtOtuJBAr1uswwdR62fzdQ_F/edit?usp=sharing&ouid=111888806341130526792&rtpof=true&sd=true'
+    }
+  },
+  
   {path:'login',component:LoginComponent},
   {path: 'stock',component:StockComponent},
   {path:'',redirectTo:'inicio',pathMatch:'full'},
